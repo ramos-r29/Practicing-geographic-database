@@ -39,3 +39,17 @@ VALUES
 (16,'red',st_geomfromtext('Polygon((21 9, 28 9, 28 15, 26 15, 26 12, 21 12, 21 9))',4326)),
 (17,'orange',st_geomfromtext('Polygon((15 12, 26 12, 26 15, 15 15, 15 12))',4326)),
 (18,'blue',st_geomfromtext('Polygon((4 11, 10 11, 10 10, 15 10, 15 15, 4 15, 4 11))',4326));
+
+-- Resolution
+
+-- 1 – Run a query to list the polygon that has the largest area.
+SELECT 
+  gid
+  , color
+  , st_area(geom)
+FROM
+  tbmap AS a
+WHERE 
+ORDER BY st_area(geom) DESC
+LIMIT 1 ;
+
