@@ -48,8 +48,14 @@ SELECT
   , color
   , st_area(geom)
 FROM
-  tbmap AS a
-WHERE 
+  tbmap 
 ORDER BY st_area(geom) DESC
 LIMIT 1 ;
 
+-- 2 – Make a query to list the area by color.
+SELECT 
+  color
+  , sum(st_area(geom))
+FROM
+  tbmap 
+GROUP BY color ; 
