@@ -59,3 +59,10 @@ SELECT
 FROM
   tbmap 
 GROUP BY color ; 
+
+-- 3–Do a query to list the centroid of the polygon.
+SELECT 
+  st_centroid(geom)
+FROM
+  tbmap  ;
+
