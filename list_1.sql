@@ -27,7 +27,7 @@ VALUES
 (4,'yellow',st_geomfromtext('Polygon((0 8, 1 8, 1 6, 4 6, 4 15, 0 15, 0 8))',4326)),
 (5,'green',st_geomfromtext('Polygon((4 6, 7 6, 7 7, 10 7, 10 11, 4 11, 4 6))',4326)),
 (6,'orange',st_geomfromtext('Polygon((3 0, 18 0, 18 5, 7 5, 7 4, 5 4, 5 2, 3 2, 3 0),(8 2, 11 2, 11 4, 8 4, 8 2),(13 3, 14 3, 14 1, 16 1, 16 4, 13 4, 13 3))',4326)),
-(7,'green',st_geomfromtext('Polygon((8 2, 11 2, 11 4, 8 4, 8 2))',4326))
+(7,'green',st_geomfromtext('Polygon((8 2, 11 2, 11 4, 8 4, 8 2))',4326)),
 (8,'blue',st_geomfromtext('Polygon((13 3, 14 3, 14 1, 16 1, 16 4, 13 4, 13 3))',4326)),
 (9,'red',st_geomfromtext('Polygon((7 5, 19 5, 19 8, 16 8, 16 10, 10 10, 10 7, 7 7, 7 5),(12 7, 14 7, 14 9, 12 9, 12 7))',4326)),
 (10,'green',st_geomfromtext('Polygon((12 7, 14 7, 14 9, 12 9, 12 7))',4326)),
