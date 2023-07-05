@@ -79,4 +79,14 @@ FROM
 WHERE 
   a.gid = 5 ;
 
+-- 5–Do a query to list the number of neighbors per polygon.
+SELECT 
+  a.gid
+  , count(b.gid)
+FROM
+  tbmap AS a
+    JOIN tbmap as b
+      ON ST_Touches(a.geom, b.geom) 
+GROUP BY a.gid ;
+
 
