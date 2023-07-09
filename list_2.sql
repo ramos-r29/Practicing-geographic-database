@@ -84,4 +84,10 @@ FROM
 /*
 2 - Make a query to obtain the intersection of the buffers of radius 0.2 for each point of the tbpoint layer and, in the sequence, load the result as a new QGIS layer.
 */
-
+SELECT 
+	ST_Intersection(ST_Buffer(b.geom, 0.2), ST_Buffer(a.geom, 0.2)) AS geom
+FROM 
+	tbponto AS a
+	, tbponto AS b
+WHERE 
+	a.gid <> b.gid ;
