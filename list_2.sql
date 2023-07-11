@@ -91,3 +91,7 @@ FROM
 	, tbponto AS b
 WHERE 
 	a.gid <> b.gid ;
+
+
+-- 3 – Make a query to obtain the REM (Minimum Bounding Box) of the points in the tbpoint layer, then load the result as a new QGIS layer .
+
