@@ -72,7 +72,7 @@ VALUES
 
 
 /*
-1 – Make a query to obtain a buffer of radius 0.2 at each point of the tbpoint layer, then load the result as a new QGIS layer
+1 – Make a query to obtain a buffer of radius 0.2 at each point of the tbponto layer, then load the result as a new QGIS layer
 */
 SELECT 
   gid
@@ -82,7 +82,7 @@ FROM
   tbponto ;
 
 /*
-2 - Make a query to obtain the intersection of the buffers of radius 0.2 for each point of the tbpoint layer and, in the sequence, load the result as a new QGIS layer.
+2 - Make a query to obtain the intersection of the buffers of radius 0.2 for each point of the tbponto layer and, in the sequence, load the result as a new QGIS layer.
 */
 SELECT 
 	ST_Intersection(ST_Buffer(b.geom, 0.2), ST_Buffer(a.geom, 0.2)) AS geom
@@ -93,8 +93,15 @@ WHERE
 	a.gid <> b.gid ;
 
 
--- 3 – Make a query to obtain the REM (Minimum Bounding Box) of the points in the tbpoint layer, then load the result as a new QGIS layer .
+-- 3 – Make a query to obtain the REM (Minimum Bounding Box) of the points in the tbponto layer, then load the result as a new QGIS layer .
 SELECT 
 	ST_Envelope(ST_Union(geom)) AS geom
 FROM 
 	tbponto ;
+
+-- 4 - Make a query to obtain the convex curve that outlines the points of the layer tbponto and, in sequence, load the result as a new QGIS layer
+SELECT 
+	st_convexhull(ST_Union(geom)) AS geom
+FROM 
+	tbponto ;
+
