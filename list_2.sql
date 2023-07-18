@@ -105,3 +105,9 @@ SELECT
 FROM 
 	tbponto ;
 
+-- 5 - Make a query to get the centroid of each geometry from the tbpoligono layer and then load the result as a new QGIS layer.
+
+SELECT
+	st_centroid(geom) geom
+FROM
+	tbpoligono ;
