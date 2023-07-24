@@ -111,3 +111,10 @@ SELECT
 	st_centroid(geom) geom
 FROM
 	tbpoligono ;
+
+-- 6 - Make a query to create a line between the point (1, 0.5) and the centroid of each geometry in the tbpoligono layer, and then load the result as a new QGIS layer.
+
+SELECT 
+	ST_MakeLine(ST_PointFromText('point(1 0.5)', 4326),ST_Centroid(geom)) AS geom
+FROM 
+	tbpoligono ;
