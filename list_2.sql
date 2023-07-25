@@ -118,3 +118,12 @@ SELECT
 	ST_MakeLine(ST_PointFromText('point(1 0.5)', 4326),ST_Centroid(geom)) AS geom
 FROM 
 	tbpoligono ;
+
+-- 7 - Make a query to obtain the bounding box of each geometry of the tbmultiponto layer and, in the sequence, load the result as a new QGIS layer.
+
+SELECT
+	ST_Envelope( geom ) AS "geom"
+FROM
+	tbmultiponto ;
+
+
